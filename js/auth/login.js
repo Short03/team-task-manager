@@ -1,17 +1,27 @@
-// js/auth/login.js
-import { loginUser } from "./authService.js";
+import { loginUser } from './authService.js';
 
-document.getElementById("login-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById('loginForm');
+  const message = document.getElementById('loginMessage');
 
-  const result = loginUser(username, password);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  if (result.success) {
-    alert(result.message);
-    window.location.href = "index.html";
-  } else {
-    alert(result.message);
-  }
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+
+    const result = loginUser(username, password);
+
+    if (result.success) {
+      message.style.color = 'green';
+      message.textContent = 'Inicio de sesión exitoso. Redirigiendo...';
+
+      setTimeout(() => {
+        window.location.href = 'dashboard.html'; // Página protegida
+      }, 1000);
+    } else {
+      message.style.color = 'red';
+      message.textContent = result.message;
+    }
+  });
 });

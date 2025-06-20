@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inicio</title>
+</head>
+<body>
+  <h1>Bienvenido a la página principal</h1>
+  <p>Solo deberías ver esto si has iniciado sesión.</p>
+
+  <button id="logout">Cerrar sesión</button>
+
+  <script type="module" src="./js/auth/protectRoute.js"></script>
+  <script type="module">
+    import { logoutUser } from './js/auth/authService.js';
+
+    document.getElementById('logout').addEventListener('click', () => {
+      logoutUser();
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

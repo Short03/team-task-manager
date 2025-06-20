@@ -1,18 +1,87 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-full bg-white">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1> Iniciar Sesion</h1>
-    <from id="login-form">
-        <input type="text" id="username" placecholder="Usuario" requierd/>
-        <input type="password" id="password" placecholder="Contraseña" required/>
-        <button type="submit">Iniciar Sesión</button>
-    </from>
+<body class="h-full">
+  <main class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <!-- Logo + Título -->
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <img class="mx-auto h-10 w-auto" src="assets/logo-2.png" alt="Tu Empresa" />
+      <h1 class="mt-6 text-center text-2xl font-bold tracking-tight text-gray-900">
+        Inicia sesión en tu cuenta
+      </h1>
+    </div>
 
-    <script type="module" src="js/auth/login.js"></script>
+    <!-- Formulario -->
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form id="loginForm" class="space-y-6" autocomplete="on">
+        <!-- Usuario -->
+        <div>
+          <label for="username" class="block text-sm font-medium text-gray-700">Usuario</label>
+          <div class="mt-2">
+            <input
+              id="username"
+              name="username"
+              type="text"
+              required
+              autocomplete="username"
+              placeholder="Tu nombre de usuario"
+              class="block w-full rounded-md border border-gray-300 px-3 py-2
+                     text-gray-900 shadow-sm placeholder-gray-400
+                     focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            />
+          </div>
+        </div>
+
+        <!-- Contraseña -->
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+          <div class="mt-2">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              required
+              autocomplete="current-password"
+              placeholder="••••••••"
+              class="block w-full rounded-md border border-gray-300 px-3 py-2
+                     text-gray-900 shadow-sm placeholder-gray-400
+                     focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            />
+          </div>
+        </div>
+
+        <!-- Mensaje de login -->
+        <p id="loginMessage" class="hidden text-sm text-center"></p>
+
+        <!-- Botón -->
+        <div>
+          <button
+            type="submit"
+            class="flex w-full justify-center rounded-md bg-indigo-600 px-4 py-2
+                   text-sm font-semibold text-white shadow-sm hover:bg-indigo-500
+                   focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            Iniciar sesión
+          </button>
+        </div>
+      </form>
+
+      <!-- Enlace a registro -->
+      <p class="mt-6 text-center text-sm text-gray-600">
+        ¿No tienes cuenta?
+        <a href="register.html" class="font-semibold text-indigo-600 hover:text-indigo-500">
+          Regístrate gratis
+        </a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Script JS -->
+  <script type="module" src="js/auth/login.js"></script>
 </body>
 </html>

@@ -4,10 +4,13 @@ export function registerUser(username, password) {
   const users = JSON.parse(localStorage.getItem("users")) || [];
 
   const userExists = users.some((user) => user.username === username);
-  if (userExists) return { success: false, message: "Usuario ya existe" };
+  if (userExists) {
+    return { success: false, message: "El usuario ya existe" };
+  }
 
   users.push({ username, password });
   localStorage.setItem("users", JSON.stringify(users));
+
   return { success: true, message: "Registro exitoso" };
 }
 
