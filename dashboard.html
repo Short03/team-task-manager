@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-gray-100">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full">
+  <main class="min-h-screen p-5">
+    <!-- Header -->
+    <header class="flex items-center justify-between bg-white p-4 rounded shadow">
+      <h1 class="text-xl font-semibold text-gray-800">Bienvenido al Panel</h1>
+      <button
+        id="logoutBtn"
+        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm font-medium"
+      >
+        Cerrar sesión
+      </button>
+    </header>
+
+    <!-- Contenido -->
+    <section class="mt-8 bg-white p-6 rounded shadow">
+      <h2 class="text-lg font-semibold text-gray-700">Hola, <span id="usernameDisplay"></span> 👋</h2>
+      <p class="mt-2 text-gray-600">
+        Bienvenido, felicidades por crear tu usuario
+      </p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { getCurrentUser, logoutUser } from "./js/auth/authService.js";
+
+    const user = getCurrentUser();
+
+    if (!user) {
+      window.location.href = "login.html"; // Protege la ruta
+    } else {
+      document.getElementById("usernameDisplay").textContent = user.username;
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      logoutUser();
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

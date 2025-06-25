@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-white">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=divice-width, initial-scale=1.0" />
+  <title>Registro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full">
+  <main class="flex min-h-full flex-col justify-center px- py-12 lg:px-8">
+    <!-- Logo + Titulo-->
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm"> 
+     <img class="mx-auto h-20 w-auto" src="assets/logo-2.jpg" alt="Asesor inmobiliario" />
+     <h1 class="mt-6 text-center text-2xl font-bold tracking-tight text-gray-900">
+       Crear una cuenta
+     </h1> 
+  </div>
+    <!-- formulario -->
+     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form id="registerForm" class="space-y-6" autocomplete="on">
+        <!--Usuario-->
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-700">Usuario</label>
+        <div class="mt-2">
+        <input
+          id="username"
+          name="username"
+          type="text"
+          required
+          autocomplete="username"
+          placeholder="Elige un nombre de usuario"
+          class="block w-full rounded-md border border-gray-300 px-3 py-2
+                 text-gray-900 shadow-sm placeholder-gray-400
+                 focus:border-green-500 focus:ring-green-500 sm:text-sm"
+      />
+      </div>  
+    </div>
+
+      <!--Contraseña-->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <div class="mt-2">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required
+            autocomplete="new-password"
+            placeholder="*********"
+            class="block w-full rounded-md border border-gray-300 px-3 py-2
+            text-gray-900 shadow-sm placeholder-gray-400
+            focus:border-green-500 focus:ring-green-500 sm:text-sm"
+            />
+        </div>
+      </div>
+      <!--Botón-->
+      <div>
+        <button
+        type="submit"
+        class="flex w-full justify-center rounded-md bg-green-600 px-4 py-2
+        text-sm font-semibold text-white shadow-sm hover:bg-green-500
+        focus:outline-none focus:ring-2 focus:ring-green-500
+        "
+        >
+        Registrarse
+      </button>
+    </div>
+  <p id="registerMessage" class="hidden text-center text-sm"></p>
+ </form>
+
+     <!-- Enlace -->
+      <p class="mt-6 text-center text-sm text-gray-600">
+        Ya tienes cuenta?
+        <a href="login.html" class="font-semibold text-gray-600 hover:text-gray-00">
+          Inicia sesion aquí
+        </a>
+      </p>
+     </div>
+  </main>
+<script type="module" src="js/auth/register.js"></script>
+
+
+</body>
+</html>
