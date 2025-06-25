@@ -6,12 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
 
     const result = registerUser(username, password);
+    console.log("Resultado del registro:", result);
 
     message.classList.remove("hidden");
+    
     if (result.success) {
       message.className = "mt-4 text-sm text-green-600 text-center";
       message.textContent = result.message;

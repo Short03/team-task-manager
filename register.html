@@ -17,10 +17,10 @@
   </div>
     <!-- formulario -->
      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form id="register-form" class="space-y-6" autocomplete="on">
+      <form id="registerForm" class="space-y-6" autocomplete="on">
         <!--Usuario-->
       <div>
-        <leabel for="username" class="block text-sm font-medium text-gray-700">Usuario</leabel>
+        <label for="username" class="block text-sm font-medium text-gray-700">Usuario</label>
         <div class="mt-2">
         <input
           id="username"
@@ -38,7 +38,7 @@
 
       <!--Contraseña-->
       <div>
-        <leabel for="password" class="block text-sm font-medium text-gray-700">Contraseña</leabel>
+        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
         <div class="mt-2">
           <input
             id="password"
@@ -64,8 +64,9 @@
         >
         Registrarse
       </button>
-      </div>
-     </form>
+    </div>
+  <p id="registerMessage" class="hidden text-center text-sm"></p>
+ </form>
 
      <!-- Enlace -->
       <p class="mt-6 text-center text-sm text-gray-600">
@@ -76,6 +77,7 @@
       </p>
      </div>
   </main>
+<script type="module" src="js/auth/register.js"></script>
 
 
 </body>
