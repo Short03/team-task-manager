@@ -3,6 +3,8 @@ import { loginUser } from './authService.js';
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("loginForm");
   const message = document.getElementById("loginMessage");
+  const desktopToggleBtn = document.getElementById('product-desktop-button');
+  const desktopSubMenu = document.getElementById('product-desktop-menu');
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -23,4 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
       message.textContent = result.message;
     }
   });
+
+ if (desktopToggleBtn && desktopSubMenu) {
+      desktopToggleBtn.addEventListener('click', () => {
+        const isExpanded = desktopToggleBtn.getAttribute('aria-expanded') === 'true';
+        desktopToggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+        desktopSubMenu.classList.toggle('hidden');
+      });
+    }
+
+
+
 });
