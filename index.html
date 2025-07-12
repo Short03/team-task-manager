@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es" class="bg-gray-100">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio</title>
-  <script src="https://cdn.tailwindcss.com"></script> 
+  <script src="js/main.js"></script>
 </head>
 <body>
+
  
 <header class="bg-white">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -16,13 +17,17 @@
       </a>
     </div>
     <div class="flex lg:hidden">
-      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-        <span class="sr-only">Open main menu</span>
-        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
-    </div>
+  <button 
+    id="mobileMenuButton" 
+    type="button" 
+    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+  >
+    <span class="sr-only">Open main menu</span>
+    <svg class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
+</div>
     <div class="hidden lg:flex lg:gap-x-12">
       <div class="relative">
         <button id="product-desktop-button" type="button" class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900" aria-expanded="false">
@@ -32,7 +37,7 @@
             <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
           </svg>
         </button>
-
+     
 
         <!--
           'Product' flyout menu, show/hide based on flyout menu state.
@@ -87,7 +92,7 @@
                   Security
                   <span class="absolute inset-0"></span>
                 </a>
-                <p class="mt-1 text-gray-600">Your customers’ data will be safe and secure</p>
+                <p class="mt-1 text-gray-600">Your customers data will be safe and secure</p>
               </div>
             </div>
             <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
@@ -145,7 +150,8 @@
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
-  <div class="lg:hidden" role="dialog" aria-modal="true">
+  <div id="mobile-menu" class="lg:hidden hidden" role="dialog" aria-modal="true">
+    
     <!-- Background backdrop, show/hide based on slide-over state. -->
     <div class="fixed inset-0 z-50"></div>
     <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
@@ -154,7 +160,8 @@
           <span class="sr-only">Your Company</span>
           <img class="h-8 w-auto" src="assets/logo-2.png" alt="Logo" />
         </a>
-        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+        <!--Boton X para cerrar menu-->
+        <button id="close-mobile-menu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Close menu</span>
           <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -201,35 +208,50 @@
 </header>
 
 <!--Inicio de pagina-->
+<div class="flex flex-col md:flex-row gap-6 md:gap-8 px-4 md:px-6 py-8 md:py-12 justify-center max-w-7xl mx-auto">
+  <!-- Columna izquierda - Contenido principal -->
+  <div class="w-full md:w-1/2 flex flex-col">
+    <div class="bg-gray-100 p-6 md:p-8 rounded-xl h-full  ">
+      <div class="font-sans space-y-3 mb-6 md:mb-8">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight md:leading-tight">
+          Inicia dando <span class="font-medium text-blue-600">buenos resultados</span>,
+        </h1>
+        <h2 class="text-xl md:text-2xl lg:text-3xl font-normal text-gray-700">
+          comienzan con <span class="font-semibold text-blue-800">CODE</span>
+        </h2>
+      </div>
+      
+      <p class="text-base md:text-lg text-black-600 leading-relaxed">
+        Los proyectos son el alma de un buen trabajo. Esta herramienta de gestión de proyectos 
+        te ayuda a planificar y monitorizar el trabajo de todos los equipos con eficiencia.
+      </p>
+    </div>
+  </div>
 
-<main class="container mx-auto px-4 py-8 max-w-3xl">
-  <section class="text-center mb-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-2">Inicia dando buenos resultados, administrador de tareas CODE.      
-    </h2>
-    <p class="text-lg text-gray-600">Los proyectos son el alma de un buen trabajo, por eso 
-      esta herramienta de gestion de proyectos que nececitas para planificar y monitorizar el trabajo de todos los equipos. </p>
-    </section>
     <!--Formulario-->
-
-    <section class="bg-white p-8 rounded-lg shadow-md">
-      <div class="mb-6">
-        <label class="block text-gray-700 font-medium mb-2" for="email" > Correo electronico empresarial          
+<div class="w-full md:w-1/2">
+    <div class="bg-gray-100 p-4 md:p-6 rounded-lg ">
+      <div class="mb-4 md:mb-6">
+        <label class="block text-gray-700 font-medium mb-2" for="email" >
+           Correo electronico empresarial          
         </label>
         <input
-        type="email"
-        id="email"
-        placeholder="tunomber@empresa.com"
-        class="w-full px-4 py-2 border-gray-300 rounded-md 
-        focus:outline-none focus:ring-2 focus:ring-blue-500">
+          type="email"
+          id="email"
+          placeholder="tunombre@empresa.com"
+          class="w-full px-4 py-2 border-gray-300 rounded-md 
+          focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
       </div>      
 
-      <button class="w-full bg-blue-600 text-white py-3 px-4 
-      rounded-md font-medium hover:bg-indigo-7 transition-colors mb-6">Inscribirse
+      <button class="w-full bg-blue-600 text-white py-2 md:py-3 px-4 
+        rounded-md font-medium hover:bg-blue-700 transition-colors mb-4 md:mb-6">
+        Inscribirse
       </button>
       
-      <div class="flex items-center mb-6">
+      <div class="flex items-center mb-4 md:mb-6">
         <div class="flex-grow border-t border-gray-300"></div>
-        <span class="mx-4 text-gray-500">o seguir con</span>
+        <span class="mx-2 md:mx-4 text-sm md:text-base text-gray-500">o seguir con</span>
         <div class="flex-grow border-t border-gray-300" ></div>
       </div>
 
@@ -237,85 +259,49 @@
       <div class="flex flex-col space-y-3">
   <!-- Botón de Google -->
   <button class="flex items-center justify-center gap-2 border border-gray-300 rounded-md py-2 px-4 hover:bg-gray-50 transition-colors w-full">
-    <!-- Icono SVG optimizado (sin atributos innecesarios) -->
-    <svg class="w-5 h-5" viewBox="0 0 48 48">
-      <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
-      <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
-      <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
-      <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
-    </svg>
-    <span>Google</span> <!-- Texto añadido -->
-  </button>
+          <svg class="w-5 h-5" viewBox="0 0 48 48">
+            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+          </svg>
+          <span class="text-sm md:text-base">Google</span>
+        </button>
 
-<div class="flex flex-col space-y-3">
-  <!-- Botón de Microsoft -->
-  <button class="flex items-center justify-center gap-2 border border-gray-300 rounded-md py-2 px-4 hover:bg-gray-50 transition-colors w-full">
-    <!-- Icono SVG optimizado de Microsoft -->
-    <svg class="w-5 h-5" viewBox="0 0 48 48">
-      <defs>
-        <linearGradient id="red" x1="6" x2="22" y1="14" y2="14" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#f44f5a"/>
-          <stop offset=".44" stop-color="#ee3d4a"/>
-          <stop offset="1" stop-color="#e52030"/>
-        </linearGradient>
-        <linearGradient id="green" x1="56.6" x2="23.63" y1="14" y2="14" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#21ad64"/>
-          <stop offset="1" stop-color="#088242"/>
-        </linearGradient>
-        <linearGradient id="yellow" x1="48.68" x2="20.72" y1="34" y2="34" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#fede00"/>
-          <stop offset="1" stop-color="#ffd000"/>
-        </linearGradient>
-        <linearGradient id="blue" x1="6" x2="22" y1="34" y2="34" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#33bef0"/>
-          <stop offset="1" stop-color="#22a5e2"/>
-        </linearGradient>
-      </defs>
-      <path fill="url(#red)" d="M22 22H6V6h16v16Z"/>
-      <path fill="url(#green)" d="M42 22H26V6h16v16Z"/>
-      <path fill="url(#yellow)" d="M42 42H26V26h16v16Z"/>
-      <path fill="url(#blue)" d="M22 42H6V26h16v16Z"/>
-    </svg>
-    <span>Microsoft</span>
-  </button>
+        <!-- Botón de Microsoft -->
+        <button class="flex items-center justify-center gap-2 border border-gray-300 rounded-md py-2 px-4 hover:bg-gray-50 transition-colors w-full">
+          <svg class="w-5 h-5" viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="red" x1="6" x2="22" y1="14" y2="14" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f44f5a"/>
+                <stop offset=".44" stop-color="#ee3d4a"/>
+                <stop offset="1" stop-color="#e52030"/>
+              </linearGradient>
+              <linearGradient id="green" x1="56.6" x2="23.63" y1="14" y2="14" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#21ad64"/>
+                <stop offset="1" stop-color="#088242"/>
+              </linearGradient>
+              <linearGradient id="yellow" x1="48.68" x2="20.72" y1="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fede00"/>
+                <stop offset="1" stop-color="#ffd000"/>
+              </linearGradient>
+              <linearGradient id="blue" x1="6" x2="22" y1="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#33bef0"/>
+                <stop offset="1" stop-color="#22a5e2"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#red)" d="M22 22H6V6h16v16Z"/>
+            <path fill="url(#green)" d="M42 22H26V6h16v16Z"/>
+            <path fill="url(#yellow)" d="M42 42H26V26h16v16Z"/>
+            <path fill="url(#blue)" d="M22 42H6V26h16v16Z"/>
+          </svg>
+          <span class="text-sm md:text-base">Microsoft</span>
+        </button>
+      </div>
+    </div>
   </div>
-
-    </section>
-</main>
-
-
-
- <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // MENÚ DESKTOP
-    const desktopToggleBtn = document.getElementById('product-desktop-button');
-    const desktopSubMenu = document.getElementById('product-desktop-menu');
-
-    if (desktopToggleBtn && desktopSubMenu) {
-      desktopToggleBtn.addEventListener('click', () => {
-        const isExpanded = desktopToggleBtn.getAttribute('aria-expanded') === 'true';
-        desktopToggleBtn.setAttribute('aria-expanded', String(!isExpanded));
-        desktopSubMenu.classList.toggle('hidden');
-      });
-    }
-
-    
-    const mobileToggleBtn = document.querySelector('button[aria-controls="products"]');
-    const mobileSubMenu = document.getElementById('products');
-    const mobileIcon = mobileToggleBtn?.querySelector('svg');
-
-    if (mobileToggleBtn && mobileSubMenu) {
-      mobileToggleBtn.addEventListener('click', () => {
-        const isExpanded = mobileToggleBtn.getAttribute('aria-expanded') === 'true';
-        mobileToggleBtn.setAttribute('aria-expanded', String(!isExpanded));
-        mobileSubMenu.classList.toggle('hidden');
-        if (mobileIcon) mobileIcon.classList.toggle('rotate-180');
-      });
-    }
-  });
-</script>
-
-
+</div>
+<script src="https://cdn.tailwindcss.com"></script> 
 </body>
 </html>
 
